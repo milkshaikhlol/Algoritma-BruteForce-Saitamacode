@@ -1,8 +1,8 @@
 import itertools
 
-# Fungsi untuk melakukan brute force pada password
+# Function to brute force passwords
 def brute_force_password(password, characters):
-    max_length = 10  # Panjang maksimum kombinasi karakter
+    max_length = 10  # Maximum length of character combination
     found = False
 
     for length in range(1, max_length + 1):
@@ -10,7 +10,7 @@ def brute_force_password(password, characters):
         for combination in combinations:
             attempt = ''.join(combination)
             if attempt == password:
-                print("Password ditemukan:", attempt)
+                print("detected password: ", attempt)
                 found = True
                 break
 
@@ -18,10 +18,10 @@ def brute_force_password(password, characters):
             break
 
     if not found:
-        print("Password tidak ditemukan.")
+        print("Password not found!")
 
 # Main program
 if __name__ == '__main__':
-    password = input("Masukkan password: ")
-    characters = input("Masukkan karakter yang digunakan untuk brute force (pisahkan dengan spasi): ").split()
+    password = input("Enter password: ")
+    characters = input("Enter the characters for brute force (separate them with spaces): ").split()
     brute_force_password(password, characters)
